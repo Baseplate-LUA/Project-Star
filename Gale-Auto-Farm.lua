@@ -31,6 +31,8 @@ UIS.InputBegan:Connect(function(input)
 			v:Destroy()
 		end
 		
+		_DoShit = true
+			
 		while wait(2) do
 			if workspace.StopSwitch.Value == false and _DoShit == true then
 
