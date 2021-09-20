@@ -33,7 +33,7 @@ UIS.InputBegan:Connect(function(input)
 		
 		_DoShit = true
 			
-		while wait(2) do
+		while wait(0.5) do
 			if workspace.StopSwitch.Value == false and _DoShit == true then
 
 				if _Target == nil then
