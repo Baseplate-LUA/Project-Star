@@ -3,6 +3,7 @@ print("Made with synapse and krnl in mind.")
 local _Target = nil
 local _DoShit = false
 
+local VirtualInput = game:GetService("VirtualInputManager")
 local UIS = game:GetService("UserInputService")
 
 function StopSwitch()
@@ -26,13 +27,13 @@ UIS.InputBegan:Connect(function(input)
 	if input.KeyCode == Enum.KeyCode.Z then
 		wait(3)
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Tobias020108Back/YBA-AUT/main/PJ-Godmode"))()
-		
+
 		for _, v in pairs(game.Lighting:GetChildren()) do
 			v:Destroy()
 		end
-		
+
 		_DoShit = true
-			
+
 		while wait(0.5) do
 			if workspace.StopSwitch.Value == false and _DoShit == true then
 
@@ -42,16 +43,12 @@ UIS.InputBegan:Connect(function(input)
 						for i = 1, 20 do
 							game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(163.631, 19.5709, 373.378))
 							wait(1)
-							keypress(0x45)  
-							keyrelease(0x45)  
+							VirtualInput:SendKeyEvent(true, Enum.KeyCode.E, false, nil)
 							wait(1)
 						end
 						wait(3)
-						keypress(0x45)  
-						keyrelease(0x45) 
-						keypress(0x45)  
-						keyrelease(0x45) 
-
+						VirtualInput:SendKeyEvent(true, Enum.KeyCode.E, false, nil)
+						VirtualInput:SendKeyEvent(true, Enum.KeyCode.E, false, nil)
 						workspace.StopSwitch.Value = false
 					else
 						for _, v in pairs(game:GetService("Workspace").Entities.Ecosystem:GetChildren()) do
@@ -72,4 +69,3 @@ UIS.InputBegan:Connect(function(input)
 
 	end
 end)
-
